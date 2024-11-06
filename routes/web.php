@@ -40,7 +40,7 @@ Route::middleware(UpdateMiddleware::class . ':admin,update')->group(function () 
 });
 
 
-Route::middleware(DeleteMiddleware::class . ':admin,create')->group(function () {
+Route::middleware(DeleteMiddleware::class . ':admin,delete')->group(function () {
     Route::delete('/student-delete/{student}', [StudentController::class, 'destroy'])->name('student.delete');
     Route::delete('/delete/{user}', [UserController::class, 'destroy'])->name('user.delete');
     Route::delete('/post-delete/{post}', [PostController::class, 'destroy'])->name('post.delete');
